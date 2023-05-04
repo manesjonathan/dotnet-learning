@@ -39,6 +39,12 @@ public class BankAccount
 
     public void Withdraw(double amount)
     {
+        if (Balance - amount < 0)
+        {
+            Console.WriteLine("You do not have enough money to withdraw " + amount);
+            return;
+        }
+        
         Balance -= amount;
         Console.WriteLine("Your balance is now " + Balance);
 
